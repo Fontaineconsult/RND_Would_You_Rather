@@ -1,7 +1,7 @@
 import { getAllData } from "../utilities/api";
 import { receiveUsers } from "../actions/users"
 import { receiveQuestions} from "../actions/questions";
-
+import { setActiveUser } from "./activeuser";
 
 export function handleInitialData(){
 
@@ -14,5 +14,17 @@ export function handleInitialData(){
         })
 
     }
+
+}
+
+export function dispatchActiveUser(activeUser) {
+    console.log("DISPATCH ACTIVE USER ", activeUser)
+    return (dispatch) => {
+
+        dispatch(setActiveUser(activeUser))
+
+    }
+
+
 
 }

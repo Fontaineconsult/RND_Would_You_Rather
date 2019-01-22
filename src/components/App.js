@@ -18,7 +18,7 @@ class App extends Component {
 
 
 
-        console.log("DAAA PROPPSSS", this.props)
+
         return(
             <div>
 
@@ -36,12 +36,13 @@ class App extends Component {
 }
 
 
-function mapStateToProps( {users, questions} ) {
+function mapStateToProps( {users, questions, activeUser} ) {
 
-    console.log("THAA STATEE", users, questions)
+
     return {
         users,
-        questions
+        questions,
+        activeUser
 
     }
 

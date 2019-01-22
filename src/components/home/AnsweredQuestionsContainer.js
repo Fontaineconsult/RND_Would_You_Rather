@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import { connect } from 'react-redux'
 
 
 class AnsweredQuestionsContainer extends Component {
@@ -7,7 +7,10 @@ class AnsweredQuestionsContainer extends Component {
     render(){
 
         return(
-            <div></div>
+            <div>
+                ANSWERED QUESTIONS
+
+            </div>
 
 
         )
