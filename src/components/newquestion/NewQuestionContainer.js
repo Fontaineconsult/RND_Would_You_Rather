@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import NewQuestionSubmitForm from "./NewQuestionSubmitForm"
 
 
 class NewQuestionContainer extends Component {
@@ -9,7 +9,7 @@ class NewQuestionContainer extends Component {
             <div>
 
                 NewQuestionContainer
-
+                <NewQuestionSubmitForm/>
             </div>
 
 

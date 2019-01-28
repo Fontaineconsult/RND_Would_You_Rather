@@ -2,24 +2,33 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 
+function UnansweredQuestion(unanswered, questions) {
+
+    return (
+        <div>
+            <span>{questions[unanswered].optionOne.text}</span>
+            <span>{questions[unanswered].optionTwo.text}</span>
+        </div>
+    )
+}
+
+
 
 class UnansweredQuestionsContainer extends Component {
 
     render(){
-        console.log("UNSAWNEREDED", this.props)
+
         return(
             <div>
-                UNASWERED QUESTIONS
-
+                UNANSWERED QUESTIONS
+                {this.props.unanswered.map(id => (UnansweredQuestion(id, this.props.questions)))}
+                <button>View Poll</button>
             </div>
 
 
         )
 
     }
-
-
-
 
 
 }
