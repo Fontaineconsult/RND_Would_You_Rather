@@ -12,7 +12,6 @@ export default function questionsReducer (state = {}, action) {
             };
 
         case ADD_QUESTION:
-            console.log("REAached Reducer", action)
             return {
                 ...state,
                 ...action.question,

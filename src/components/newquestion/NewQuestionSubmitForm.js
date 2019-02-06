@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { dispatchNewQuestion } from '../../actions/shared'
+import { registerQuestion } from "../../actions/users";
 import { connect } from 'react-redux'
 
 
@@ -38,8 +39,9 @@ class NewQuestionSubmitForm extends Component {
 
     submitQuestions(event) {
         event.preventDefault();
-        console.log("submitting", {activeUser: this.props.activeUser.activeUserId, optionOne: this.state.question1, optionTwo: this.state.question2 })
-        this.props.dispatch(dispatchNewQuestion({activeUser: this.props.activeUser.activeUserId, optionOne: this.state.question1, optionTwo: this.state.question2 }))
+
+
+        this.props.dispatch(dispatchNewQuestion({activeUser: this.props.activeUser.activeUserId, optionOne: this.state.question1, optionTwo: this.state.question2 }));
 
 
     }

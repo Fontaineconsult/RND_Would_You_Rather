@@ -4,7 +4,7 @@ import LeaderBoardContainer from "./leaderboard/LeaderBoardContainer"
 import LoginContainer from "./login/LoginContainer"
 import NewQuestionContainer from "./newquestion/NewQuestionContainer"
 import QuestionContainer from "./question/QuestionContainer"
-
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 
 
@@ -16,11 +16,11 @@ class MainContentContainer extends Component {
         return(
             <div>
                 MainContentView
-                <HomeViewContainer/>
-                <LeaderBoardContainer/>
-                <LoginContainer/>
-                <NewQuestionContainer/>
-                <QuestionContainer/>
+                <Route exact path='/' component={HomeViewContainer}/>
+                <Route exact path='/' component={LeaderBoardContainer}/>
+                <Route exact path='/' component={LoginContainer}/>
+                <Route exact path='/' component={NewQuestionContainer}/>
+                <Route path="/question/:id" component={QuestionContainer}/>
 
             </div>
 

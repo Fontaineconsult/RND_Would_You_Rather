@@ -1,13 +1,15 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import {Link} from "react-router-dom";
 
 
-function UnansweredQuestion(unanswered, questions) {
-
+function UnansweredQuestion(props) {
+    let link = "/question/" + props.question_id
     return (
         <div>
-            <span>{questions[unanswered].optionOne.text}</span>
-            <span>{questions[unanswered].optionTwo.text}</span>
+            <span>{props.questions[props.question_id].optionOne.text}</span>
+            <span>{props.questions[props.question_id].optionTwo.text}</span>
+            <Link to={{pathname: link}}>View Poll</Link>
         </div>
     )
 }
@@ -21,8 +23,8 @@ class UnansweredQuestionsContainer extends Component {
         return(
             <div>
                 UNANSWERED QUESTIONS
-                {this.props.unanswered.map(id => (UnansweredQuestion(id, this.props.questions)))}
-                <button>View Poll</button>
+                {this.props.unanswered.map(id => (<UnansweredQuestion questions = {this.props.questions} question_id={id}/>))}
+
             </div>
 
 

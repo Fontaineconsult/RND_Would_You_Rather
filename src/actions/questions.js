@@ -1,4 +1,4 @@
-import { formatQuestion } from '../utilities/_data'
+
 
 
 export const RECEIVE_QUESTIONS = "RECEIVE_QUESTIONS";
@@ -13,13 +13,9 @@ export function receiveQuestions (questions) {
 
 }
 
-export function addQuestion (question) {
-    console.log("question action", question)
-    let formattedQuestion = formatQuestion( {optionOneText: question.optionOne, optionTwoText:question.optionTwo, author:question.activeUser} )
+export function addQuestion (formattedQuestion) {
 
 
-
-    console.log(formattedQuestion, "DSKLDSGLKDSGKH", [formattedQuestion.id])
 
     return {
         type: ADD_QUESTION,
@@ -28,3 +24,5 @@ export function addQuestion (question) {
     }
 
 }
+
+
