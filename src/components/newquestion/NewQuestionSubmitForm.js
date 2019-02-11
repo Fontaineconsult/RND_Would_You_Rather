@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { dispatchNewQuestion } from '../../actions/shared'
 import { registerQuestion } from "../../actions/users";
 import { connect } from 'react-redux'
-
+import { withRouter } from 'react-router'
 
 class NewQuestionSubmitForm extends Component {
 
@@ -42,7 +42,7 @@ class NewQuestionSubmitForm extends Component {
 
 
         this.props.dispatch(dispatchNewQuestion({activeUser: this.props.activeUser.activeUserId, optionOne: this.state.question1, optionTwo: this.state.question2 }));
-
+        this.props.history.push("/")
 
     }
 
@@ -52,6 +52,7 @@ class NewQuestionSubmitForm extends Component {
             <div>
 
                <form onSubmit={this.submitQuestions}>
+
                    <input type='text' name="Question1" placeholder="Question1" onChange={this.updateInput}/>
                    <input type='text' name="Question2" placeholder="Question1" onChange={this.updateInput}/>
                    <input type='Submit' name="Submit"/>
@@ -80,4 +81,4 @@ function mapStateToProps( {users, activeUser, questions} ) {
     }
 
 
-export default connect(mapStateToProps)(NewQuestionSubmitForm);
+export default withRouter(connect(mapStateToProps)(NewQuestionSubmitForm));

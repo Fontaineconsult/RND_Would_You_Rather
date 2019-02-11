@@ -29,9 +29,13 @@ class AnsweredQuestion extends Component {
                 Results
 
                 Optiong One {this.props.question_id.optionOne.text}
+
+                {this.props.selfVoted === 'optionOne' && (<b>You Voted</b>)}
                 <TallyBar percent={this.props.optionOnePercent} tally={this.props.optionOneTally}/>
 
                 Option Two {this.props.question_id.optionTwo.text}
+
+                {this.props.selfVoted === 'optionTwo' && (<b>You Voted</b>)}
                 <TallyBar percent={this.props.optionTwoPercent} tally={this.props.optionTwoTally}/>
 
             </div>
@@ -55,7 +59,10 @@ function mapStateToProps({questions, activeUser, users }, question_id) {
     let optionOneTally = 0;
     let optionTwoTally = 0;
 
+    console.log(question_id)
 
+    let selfVoted = users[activeUser.activeUserId].answers[question_id.question_id.id];
+    console.log(selfVoted)
 
     Object.keys(users).forEach(function (user) {
 
@@ -77,7 +84,7 @@ function mapStateToProps({questions, activeUser, users }, question_id) {
     let optionTwoPercent = optionTwoTally / (optionOneTally + optionTwoTally) * 100;
 
 
-    return({questions, activeUser, optionOneTally, optionTwoTally, optionOnePercent, optionTwoPercent})
+    return({questions, activeUser, optionOneTally, optionTwoTally, optionOnePercent, optionTwoPercent, selfVoted})
 
 }
 

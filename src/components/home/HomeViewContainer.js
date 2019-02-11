@@ -7,6 +7,31 @@ import UnansweredQuestionsContainer from "./UnansweredQuestionsContainer"
 
 class HomeViewContainer extends Component {
 
+    constructor(props){
+        super(props);
+
+        this.state = {
+            viewMode: 1
+        };
+
+        this.setAnsweredQuestions = this.setAnsweredQuestions.bind(this);
+        this.setUnansweredQuestions = this.setUnansweredQuestions.bind(this)
+    }
+
+    setAnsweredQuestions(event){
+
+        this.setState({
+            viewMode: 0
+        })
+    }
+
+    setUnansweredQuestions(event){
+
+        this.setState({
+            viewMode: 1
+        })
+
+    }
 
     render () {
         return(
@@ -14,11 +39,18 @@ class HomeViewContainer extends Component {
 
 
                 Home View
-                {console.log("DAPARTSSS", this.props)}
+
                 {Object.keys(this.props.activeUser).length > 0 && (
                     <div>
-                    <AnsweredQuestionsContainer/>
-                    <UnansweredQuestionsContainer unanswered={this.props.unansweredQuestions}/>
+
+                        <div className="homeViewButtons">
+                            <div onClick={this.setAnsweredQuestions}>Answered Questions</div>
+                            <div onClick={this.setUnansweredQuestions}>Unanswered Questions</div>
+                        </div>
+
+                    {this.state.viewMode === 0 &&  (<AnsweredQuestionsContainer/>)}
+                    {this.state.viewMode === 1 &&  (<UnansweredQuestionsContainer unanswered={this.props.unansweredQuestions}/>)}
+
                     </div>
                 )}
 

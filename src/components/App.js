@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { handleInitialData } from "../actions/shared";
 import MainContentContainer from "./MainContentContainer"
 import TopMenu from "../components/dashboard/TopMenu"
-
+import { Route, Router } from 'react-router-dom'
 
 class App extends Component {
 
@@ -20,10 +20,11 @@ class App extends Component {
 
 
         return(
-            <div>
+            <div className="AppContainer">
 
                 <TopMenu/>
-                <MainContentContainer/>
+
+                <Route component={MainContentContainer}/>
 
 
             </div>

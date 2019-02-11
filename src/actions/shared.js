@@ -1,11 +1,12 @@
 import { getAllData } from "../utilities/api";
 import { receiveUsers } from "../actions/users"
 import { receiveQuestions} from "../actions/questions";
-import { setActiveUser } from "./activeuser";
+import { setActiveUser, logoutActiveUser } from "./activeuser";
 import { addQuestion } from "./questions"
 import { answerQuestion } from "../actions/users";
 import { registerQuestion } from "../actions/users";
-import {formatQuestion} from "../utilities/_data";
+import {formatQuestion, _saveQuestionAnswer} from "../utilities/_data";
+
 
 export function handleInitialData(){
 
@@ -33,6 +34,11 @@ export function dispatchActiveUser(activeUser) {
 
 export function dispatchNewQuestion(question) {
     let formattedQuestion = formatQuestion( {optionOneText: question.optionOne, optionTwoText:question.optionTwo, author:question.activeUser} )
+
+
+
+
+
     return (dispatch) => {
 
 
@@ -46,6 +52,13 @@ export function dispatchNewQuestion(question) {
 
 export function dispatchAnswer(question, answer, user) {
 
+    let authedUser = user.activeUserId;
+    let qid = question.id;
+    answer = answer.checked;
+
+
+
+    _saveQuestionAnswer({authedUser, qid, answer});
     return (dispatch) => {
 
         dispatch(answerQuestion(question, answer, user))
@@ -53,6 +66,18 @@ export function dispatchAnswer(question, answer, user) {
     }
 
 
+
+}
+
+
+export function dispatchLogout( activeUser) {
+
+    return (dispatch) => {
+
+        dispatch(logoutActiveUser( activeUser ))
+
+
+    }
 
 
 }

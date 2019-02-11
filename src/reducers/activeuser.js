@@ -1,5 +1,4 @@
-import { SET_ACTIVE_USER  } from "../actions/activeuser";
-
+import { SET_ACTIVE_USER, LOGOUT_ACTIVE_USER  } from "../actions/activeuser";
 
 export default function activeUser (state = {}, action) {
 
@@ -8,9 +7,14 @@ export default function activeUser (state = {}, action) {
         case SET_ACTIVE_USER :
             console.log("SET AVTICE USER", action.type, action.activeUser)
             return {
-                ...state,
                 activeUserName: action.activeUser.selectedUserName,
                 activeUserId: action.activeUser.selectedUserId
+            };
+
+        case LOGOUT_ACTIVE_USER:
+
+            return {
+                    ...state = {}
             };
 
 

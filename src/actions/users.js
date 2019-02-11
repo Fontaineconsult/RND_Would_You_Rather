@@ -1,3 +1,7 @@
+
+import { _saveQuestionAnswer } from '../utilities/_data'
+
+
 export const RECEIVE_USERS = "RECEIVE_USERS"
 export const ANSWER_QUESTION = "ANSWER_QUESTION"
 export const REGISTER_QUESTION = "REGISTER_QUESTION"
@@ -27,7 +31,7 @@ export function answerQuestion (question, answer, user ) {
 }
 
 export function registerQuestion(formattedQuestion) {
-    console.log("REG ACTION", formattedQuestion)
+
     return {
         type: REGISTER_QUESTION,
         questionID: formattedQuestion.id,

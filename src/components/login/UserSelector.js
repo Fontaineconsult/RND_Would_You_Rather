@@ -2,26 +2,27 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { dispatchActiveUser } from "../../actions/shared";
 import UserScoreContainer from "../leaderboard/LeaderBoardContainer";
-
+import { withRouter } from 'react-router'
 
 
 class UserSelector extends Component {
 
-        constructor(props) {
-            super(props);
-            this.state = {
-                selectedUserName: 'Not Logged In',
-                selectedUserId: ''
+    constructor(props) {
+        super(props);
+        this.state = {
+            selectedUserName: 'Not Logged In',
+            selectedUserId: ''
 
-            };
-            this.setUser = this.setUser.bind(this);
-            this.setCompState = this.setCompState.bind(this);
+        };
+        this.setUser = this.setUser.bind(this);
+        this.setCompState = this.setCompState.bind(this);
 
-}
+    }
 
     setUser(event){
         event.preventDefault();
         this.props.dispatch(dispatchActiveUser(this.state))
+        this.props.history.push("/")
     }
 
     setCompState(event){
@@ -67,4 +68,4 @@ function mapStateToProps( {users, activeUser} ) {
 
 }
 
-export default connect(mapStateToProps)(UserSelector)
+export default withRouter(connect(mapStateToProps)(UserSelector))

@@ -1,0 +1,29 @@
+
+.AppContainer {
+
+    margin-right: 10vw;
+    margin-left: 10vw ;
+}
+
+.TopMenu {
+
+    display: inline-flex;
+
+}
+
+
+.NavButtons {
+
+    display: inline-flex;
+}
+
+.UserNameDisplay {
+
+    display: inline-flex;
+
+}
+
+.UserName {
+
+    display: inline-flex;
+}

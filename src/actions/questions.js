@@ -1,4 +1,4 @@
-
+import { _saveQuestion } from '../utilities/_data'
 
 
 export const RECEIVE_QUESTIONS = "RECEIVE_QUESTIONS";
@@ -15,7 +15,7 @@ export function receiveQuestions (questions) {
 
 export function addQuestion (formattedQuestion) {
 
-
+    _saveQuestion(formattedQuestion)
 
     return {
         type: ADD_QUESTION,

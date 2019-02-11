@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import AnswerQuestion from "./AnswerQuestion"
 import AnsweredQuestion from "./AnsweredQuestion"
+import {withRouter} from "react-router";
 
 class QuestionContainer extends Component {
 
@@ -44,11 +45,12 @@ class QuestionContainer extends Component {
 
 
 function mapStateToProps({ questions, activeUser, users }, { match }){
+    console.log("MATCH", match)
     const question_id = match.params.id || { question_id: null };
     const isAnswered = question_id in users[activeUser.activeUserId].answers;
 
 
-    console.log("MATCH", match)
+
     console.log("question_id", question_id)
     console.log("IS ANSWERED", isAnswered)
 
@@ -67,4 +69,4 @@ function mapStateToProps({ questions, activeUser, users }, { match }){
 
 
 
-export default connect(mapStateToProps)(QuestionContainer);
+export default withRouter(connect(mapStateToProps)(QuestionContainer));
