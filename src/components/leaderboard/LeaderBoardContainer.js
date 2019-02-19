@@ -11,9 +11,10 @@ class LeaderBoardContainer extends Component {
                 <br></br>
                 LeaderBoardContainer
 
+                {console.log(this.props.sortedUsers)}
+                {(this.props.sortedUsers).map((item, i) => (
 
-                {Object.keys(this.props.users).map((item, i) => (
-                        <UserScoreContainer key={i} user={item}/>
+                    <UserScoreContainer key={i} user={item.name}/>
                 ))}
 
 
@@ -27,14 +28,19 @@ class LeaderBoardContainer extends Component {
 
 }
 
-
-
 function mapStateToProps( {users, questions} ) {
+    let sortedUsers = Object.keys(users).map((user) =>(
+        {name: user, score: users[user].questions.length + Object.keys(users[user].answers).length}
 
+    ));
+    sortedUsers.sort(function (a,b) {
+        return b.score - a.score
+    });
 
     return {
         users,
-        questions
+        questions,
+        sortedUsers,
 
     }
 

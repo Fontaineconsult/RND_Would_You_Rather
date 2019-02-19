@@ -35,22 +35,22 @@ class HomeViewContainer extends Component {
 
     render () {
         return(
-            <div>
+            <div className="homeViewContainer">
 
 
                 Home View
 
                 {Object.keys(this.props.activeUser).length > 0 && (
-                    <div>
+                    <div className="questionsOuterContainer">
 
                         <div className="homeViewButtons">
                             <div onClick={this.setAnsweredQuestions}>Answered Questions</div>
                             <div onClick={this.setUnansweredQuestions}>Unanswered Questions</div>
                         </div>
-
+                    <div className="homeViewContentContainer">
                     {this.state.viewMode === 0 &&  (<AnsweredQuestionsContainer/>)}
                     {this.state.viewMode === 1 &&  (<UnansweredQuestionsContainer unanswered={this.props.unansweredQuestions}/>)}
-
+                    </div>
                     </div>
                 )}
 

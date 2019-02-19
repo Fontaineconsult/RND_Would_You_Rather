@@ -5,8 +5,8 @@ import { setActiveUser, logoutActiveUser } from "./activeuser";
 import { addQuestion } from "./questions"
 import { answerQuestion } from "../actions/users";
 import { registerQuestion } from "../actions/users";
-import {formatQuestion, _saveQuestionAnswer} from "../utilities/_data";
-
+import {formatQuestion, _saveQuestionAnswer, _saveQuestion} from "../utilities/_data";
+import { setBrowserHistory } from "../actions/browserHistory"
 
 export function handleInitialData(){
 
@@ -35,10 +35,7 @@ export function dispatchActiveUser(activeUser) {
 export function dispatchNewQuestion(question) {
     let formattedQuestion = formatQuestion( {optionOneText: question.optionOne, optionTwoText:question.optionTwo, author:question.activeUser} )
 
-
-
-
-
+    _saveQuestion({optionOneText: question.optionOne, optionTwoText:question.optionTwo, author:question.activeUser})
     return (dispatch) => {
 
 
@@ -54,14 +51,15 @@ export function dispatchAnswer(question, answer, user) {
 
     let authedUser = user.activeUserId;
     let qid = question.id;
-    answer = answer.checked;
+    let answerino = answer.checked;
+    console.log("ANSWERINO", answerino, qid, authedUser)
 
 
+    _saveQuestionAnswer({authedUser:authedUser, qid:qid, answer:answerino});
 
-    _saveQuestionAnswer({authedUser, qid, answer});
     return (dispatch) => {
 
-        dispatch(answerQuestion(question, answer, user))
+        dispatch(answerQuestion(question, answerino, user))
 
     }
 
@@ -79,5 +77,16 @@ export function dispatchLogout( activeUser) {
 
     }
 
+
+}
+
+
+export function dispatchCurrentRoute(route){
+
+    return (dispatch) => {
+
+        dispatch(setBrowserHistory(route))
+
+    }
 
 }

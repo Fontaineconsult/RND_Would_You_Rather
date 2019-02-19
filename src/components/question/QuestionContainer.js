@@ -11,13 +11,13 @@ class QuestionContainer extends Component {
 
 
         if (this.props.question === undefined) {
-            return(<div>Loading</div>)
+            return(<div>404 Question Not Found</div>)
 
         } else {
             return(
 
                 <div>
-                    <b>QuestionContainer</b>
+                    <b>Would you Rather</b>
                     {this.props.isAnswered && (
                         <AnsweredQuestion question_id = {this.props.question}/>
 

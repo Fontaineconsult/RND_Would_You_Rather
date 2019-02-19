@@ -21,6 +21,7 @@ class TopMenu extends Component {
 
        return(
            <div className="TopMenu">
+               <div className="innerMenuContainer">
                <div className="NavButtons">
                    <div><Link to={{pathname: "/"}}>Home</Link></div>
                    <div><Link to={{pathname: "/add"}}>New Question</Link></div>
@@ -42,6 +43,7 @@ class TopMenu extends Component {
                {this.props.loggedIn === false && ( <div><Link to={{pathname: "/login"}}>Login</Link></div>)}
                     {this.props.loggedIn === true && ( <div><Link to={{pathname: "/logout"}}>Logout</Link></div>)}
                 </div>
+               </div>
            </div>
 
 

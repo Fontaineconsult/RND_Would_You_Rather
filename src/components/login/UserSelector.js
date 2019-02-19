@@ -22,7 +22,21 @@ class UserSelector extends Component {
     setUser(event){
         event.preventDefault();
         this.props.dispatch(dispatchActiveUser(this.state))
-        this.props.history.push("/")
+
+        console.log("THAATT HIST", this.props.history)
+        console.log("THEM PROPPSSSS", this.props)
+        console.log(window.location.pathname)
+
+        if (this.props.location.state === undefined) {
+
+            this.props.history.push("/")
+        } else {
+            this.props.history.push(this.props.location.state.from.pathname)
+
+        }
+
+
+
     }
 
     setCompState(event){
@@ -59,10 +73,10 @@ class UserSelector extends Component {
 
 }
 
-function mapStateToProps( {users, activeUser} ) {
+function mapStateToProps( {users, activeUser, ownProps} ) {
 
     let userList = {name: Object.keys(users).map(user => (users[user].name)), id: Object.keys(users)}
-    console.log("USERLIST", userList)
+    console.log("ownProps", ownProps)
 
     return {users, activeUser, userList}
 

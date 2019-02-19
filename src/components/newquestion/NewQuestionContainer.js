@@ -8,19 +8,11 @@ class NewQuestionContainer extends Component {
         return(
             <div>
 
-                NewQuestionContainer
+                <div>Would you Rather</div>
                 <NewQuestionSubmitForm/>
             </div>
-
-
         )
-
-
-
-
     }
-
-
 
 }
 

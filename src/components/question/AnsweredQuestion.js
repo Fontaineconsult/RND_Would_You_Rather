@@ -8,8 +8,9 @@ function TallyBar (props) {
 
     return(
 
-        <div>Tallybar
-            {props.tally}
+        <div>
+            {props.tally === 1 && (<div>{props.tally} person voted for this</div>)}
+            {props.tally !== 1 && (<div>{props.tally} people voted for this</div>)}
             <Progress percent={props.percent}/>
         </div>
 
@@ -23,12 +24,13 @@ class AnsweredQuestion extends Component {
 
 
     render() {
+        console.log("SELFVOTE", this.props.selfVoted)
         return (
             <div>
 
                 Results
 
-                Optiong One {this.props.question_id.optionOne.text}
+                Option One {this.props.question_id.optionOne.text}
 
                 {this.props.selfVoted === 'optionOne' && (<b>You Voted</b>)}
                 <TallyBar percent={this.props.optionOnePercent} tally={this.props.optionOneTally}/>
@@ -79,10 +81,8 @@ function mapStateToProps({questions, activeUser, users }, question_id) {
         }
     });
 
-
     let optionOnePercent = optionOneTally / (optionOneTally + optionTwoTally) * 100;
     let optionTwoPercent = optionTwoTally / (optionOneTally + optionTwoTally) * 100;
-
 
     return({questions, activeUser, optionOneTally, optionTwoTally, optionOnePercent, optionTwoPercent, selfVoted})
 

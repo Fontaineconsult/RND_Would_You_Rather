@@ -26,9 +26,9 @@ function UserProfileImage(props) {
 class UserScoreContainer extends Component {
 
     render() {
-        console.log("USERCONTAINER", this.props)
-        let createdCount = this.props.users[this.props.user].questions.length
-        let answeredCount = Object.keys(this.props.users[this.props.user].answers).length
+        console.log("USERCONTAINER", this.props);
+        let createdCount = this.props.users[this.props.user].questions.length;
+        let answeredCount = Object.keys(this.props.users[this.props.user].answers).length;
 
         return(
         <div>

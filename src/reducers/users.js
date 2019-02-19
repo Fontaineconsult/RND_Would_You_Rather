@@ -16,27 +16,23 @@ export default function users (state = {}, action) {
         case ANSWER_QUESTION:
 
             const new_answers = state[action.user.activeUserId].answers;
-            Object.assign(new_answers, {[action.question.id]: action.answer.checked});
+            Object.assign(new_answers, {[action.question.id]: action.answer});
             return {
                 ...state,
                 ...state[action.user.activeUserId].answers[new_answers]
             };
 
-
         case REGISTER_QUESTION:
-            console.log("REGUSTE", action)
+
             return {
                 ...state,
                 [action.user]: {
                     ...state[action.user],
                     questions: state[action.user].questions.concat([action.questionID])
 
-
                 }
 
             };
-
-
 
         default :
             return state
