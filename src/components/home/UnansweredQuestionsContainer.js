@@ -6,10 +6,17 @@ import {Link} from "react-router-dom";
 function UnansweredQuestion(props) {
     let link = "/question/" + props.question_id
     return (
-        <div>
-            <span>{props.questions[props.question_id].optionOne.text}</span>
-            <span>{props.questions[props.question_id].optionTwo.text}</span>
-            <Link to={{pathname: link}}>View Poll</Link>
+        <div className="questionSelection">
+            <div className="questionSelectionLeft">
+                <div className="questionToSelect">{props.questions[props.question_id].optionOne.text}</div>
+                <div>or</div>
+                <div className="questionToSelect">{props.questions[props.question_id].optionTwo.text}</div>
+            </div>
+            <div className="questionSelectionRight">
+                <Link to={{pathname: link}}>View Poll</Link>
+
+            </div>
+
         </div>
     )
 }
@@ -22,7 +29,7 @@ class UnansweredQuestionsContainer extends Component {
 
         return(
             <div>
-                UNANSWERED QUESTIONS
+                <div className="homeQuestionsTitle">Your Unanswered Questions</div>
                 {this.props.unanswered.map(id => (<UnansweredQuestion questions = {this.props.questions} question_id={id}/>))}
 
             </div>

@@ -9,9 +9,19 @@
     display: inline-flex;
     width: 100%;
     height: 3vh;
+    background-color: #eae6e5;
 
 }
 
+
+
+.mainContentContainer {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+
+
+}
 
 .NavButtons {
 
@@ -27,10 +37,55 @@
 .UserName {
 
     display: inline-flex;
+    margin-left: 40px;
 }
 
 .homeViewButtons {
     display: flex;
 
 
+}
+
+.homeQuestionsTitle {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.homeViewButton {
+
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.questionSelection {
+    margin-bottom: 20px;
+    display: flex;
+
+}
+
+.questionSelectionLeft {
+
+}
+
+.questionSelectionRight {
+    margin-left: auto;
+    margin-right: 10%;
+
+}
+
+
+.innerMenuContainer {
+    display: flex;
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+
+}
+
+.NavButton {
+    margin-left: 10px;
+    margin-right: 10px;
 }

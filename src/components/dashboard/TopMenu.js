@@ -23,9 +23,9 @@ class TopMenu extends Component {
            <div className="TopMenu">
                <div className="innerMenuContainer">
                <div className="NavButtons">
-                   <div><Link to={{pathname: "/"}}>Home</Link></div>
-                   <div><Link to={{pathname: "/add"}}>New Question</Link></div>
-                   <div><Link to={{pathname: "/leaderboard"}}>Leader Board</Link></div>
+                   <div className="NavButton"><Link to={{pathname: "/"}}>Home</Link></div>
+                   <div className="NavButton"><Link to={{pathname: "/add"}}>New Question</Link></div>
+                   <div className="NavButton"><Link to={{pathname: "/leaderboard"}}>Leader Board</Link></div>
 
 
                </div>
@@ -33,15 +33,15 @@ class TopMenu extends Component {
                <div className="UserNameDisplay">
 
                    <div className="UserName">
-                       <div>Name Display:</div>
+
                        {Object.keys(this.props.activeUser).length > 0 && (<div>{this.props.activeUser.activeUserName}</div>)}
                        {Object.keys(this.props.activeUser).length === 0 && (<div>Not Logged In</div>)}
                    </div>
                </div>
 
                 <div className='LoginContainer'>
-               {this.props.loggedIn === false && ( <div><Link to={{pathname: "/login"}}>Login</Link></div>)}
-                    {this.props.loggedIn === true && ( <div><Link to={{pathname: "/logout"}}>Logout</Link></div>)}
+               {this.props.loggedIn === false && ( <div className="NavButton"><Link to={{pathname: "/login"}}>Login</Link></div>)}
+                    {this.props.loggedIn === true && ( <div className="NavButton"><Link to={{pathname: "/logout"}}>Logout</Link></div>)}
                 </div>
                </div>
            </div>

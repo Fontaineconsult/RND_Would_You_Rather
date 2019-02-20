@@ -44,8 +44,8 @@ class HomeViewContainer extends Component {
                     <div className="questionsOuterContainer">
 
                         <div className="homeViewButtons">
-                            <div onClick={this.setAnsweredQuestions}>Answered Questions</div>
-                            <div onClick={this.setUnansweredQuestions}>Unanswered Questions</div>
+                            <div className="homeViewButton" onClick={this.setAnsweredQuestions}>Answered Questions</div>
+                            <div className="homeViewButton" onClick={this.setUnansweredQuestions}>Unanswered Questions</div>
                         </div>
                     <div className="homeViewContentContainer">
                     {this.state.viewMode === 0 &&  (<AnsweredQuestionsContainer/>)}

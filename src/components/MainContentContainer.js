@@ -19,7 +19,7 @@ class MainContentContainer extends Component {
     render() {
         console.log("EHHDJHGDG", this.props.location.state)
         return(
-            <div>
+            <div className="mainContentContainer">
                 MainContentView
 
                 <Switch>
