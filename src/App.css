@@ -67,7 +67,14 @@
 }
 
 .questionSelectionLeft {
+    display: inline-flex;
+    margin-right: 20px;
 
+}
+
+.questionSelectionLeftContent {
+
+    margin-left: 20px;
 }
 
 .questionSelectionRight {
@@ -88,4 +95,39 @@
 .NavButton {
     margin-left: 10px;
     margin-right: 10px;
+}
+
+.newQuestionContainerHeaderTop {
+
+    text-align: center;
+    margin-bottom: 30px;
+
+}
+
+.newQuestionContainerHeaderBottom {
+
+    text-align: center;
+    margin-bottom: 30px;
+
+}
+
+.userScoreContainer {
+    margin-bottom: 20px;
+
+
+}
+
+.scoresOuterContainer {
+
+    display: inline-flex;
+}
+
+.userImageContainer {
+    margin-right: 20px;
+
+}
+
+.userScoreName {
+    margin-bottom: 10px;
+
 }

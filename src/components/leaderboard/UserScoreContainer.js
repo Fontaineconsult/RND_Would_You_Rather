@@ -18,7 +18,7 @@ function TotalScore(props) {
 }
 
 function UserProfileImage(props) {
-    return <img src={"https://www.argentum.org/wp-content/uploads/2018/12/blank-profile-picture-973460_6404.png"}
+    return <img src={props.image}
                 style={tempImgSize}/>
 
 }
@@ -31,13 +31,22 @@ class UserScoreContainer extends Component {
         let answeredCount = Object.keys(this.props.users[this.props.user].answers).length;
 
         return(
-        <div>
-            <div>USERSCORECONTAINER</div>
-            <div>{this.props.users[this.props.user].name}</div>
-            <AnsweredQuestions  answeredCount={answeredCount}/>
-            <CreatedQuestions  createdCount={createdCount}/>
-            <TotalScore totalscore = {createdCount + answeredCount}/>
-            <UserProfileImage />
+        <div className="userScoreContainer">
+
+            <div className="userScoreName" >{this.props.users[this.props.user].name}</div>
+            <div className="scoresOuterContainer">
+                <div className="userImageContainer">
+                    <UserProfileImage image={this.props.users[this.props.user].avatarURL} />
+                </div>
+                <div className="scoresContainer">
+                    <AnsweredQuestions  answeredCount={answeredCount}/>
+                    <CreatedQuestions  createdCount={createdCount}/>
+                    <TotalScore totalscore = {createdCount + answeredCount}/>
+                </div>
+
+            </div>
+
+
 
 
         </div>

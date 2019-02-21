@@ -49,16 +49,13 @@ class NewQuestionSubmitForm extends Component {
 
     render () {
         return(
-            <div>
+            <div className="newQuestionSubmitFormContainer">
 
-               <form onSubmit={this.submitQuestions}>
-
+               <form className="newQuestionSubmitForm" onSubmit={this.submitQuestions}>
                    <input type='text' name="Question1" placeholder="Question1" onChange={this.updateInput}/>
                    <input type='text' name="Question2" placeholder="Question1" onChange={this.updateInput}/>
                    <input type='Submit' name="Submit"/>
                </form>
-
-
 
             </div>
 

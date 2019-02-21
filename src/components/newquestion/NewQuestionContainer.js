@@ -6,9 +6,10 @@ class NewQuestionContainer extends Component {
 
     render () {
         return(
-            <div>
+            <div className="newQuestionContainer">
 
-                <div>Would you Rather</div>
+                <div className="newQuestionContainerHeaderTop">Complete the question</div>
+                <div className="newQuestionContainerHeaderBottom">Would you rather</div>
                 <NewQuestionSubmitForm/>
             </div>
         )
