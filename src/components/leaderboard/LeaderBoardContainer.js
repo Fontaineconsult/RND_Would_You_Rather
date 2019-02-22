@@ -9,7 +9,7 @@ class LeaderBoardContainer extends Component {
         return(
             <div className="leaderBoardContainer">
                 <br></br>
-                LeaderBoardContainer
+                <div className="leaderBoardTitle">Leader Board</div>
 
                 {console.log(this.props.sortedUsers)}
                 {(this.props.sortedUsers).map((item, i) => (
