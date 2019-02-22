@@ -8,7 +8,7 @@ function TallyBar (props) {
 
     return(
 
-        <div>
+        <div className="tallyBar">
             {props.tally === 1 && (<div>{props.tally} person voted for this</div>)}
             {props.tally !== 1 && (<div>{props.tally} people voted for this</div>)}
             <Progress percent={props.percent}/>
@@ -22,38 +22,45 @@ function TallyBar (props) {
 
 class AnsweredQuestion extends Component {
 
-
     render() {
-        console.log("SELFVOTE", this.props.selfVoted)
+        console.log("PEERERS", this.props)
+        console.log("GERERERER", this.props.question_id.question_id.author)
         return (
-            <div>
+            <div className="answeredQuestionContainer">
 
-                Results
+                <div className="askedByHeader">Asked by: {this.props.users[this.props.question_id.question_id.author].name}</div>
 
-                Option One {this.props.question_id.optionOne.text}
+                <div className="answeredQuestionContainerContent">
+                    <div className="questionContainerLeft">
+                        <img src={this.props.users[this.props.question_id.question_id.author].avatarURL} alt="avatar"/>
 
-                {this.props.selfVoted === 'optionOne' && (<b>You Voted</b>)}
-                <TallyBar percent={this.props.optionOnePercent} tally={this.props.optionOneTally}/>
+                    </div>
+                    <div className="questionContainerRight">
+                        <div className="wouldYouRather">Would you rather</div>
+                        <div className="answeredOption">
+                            Option One {this.props.question_id.question_id.optionOne.text}
+                            {this.props.selfVoted === 'optionOne' && (<b> You Voted</b>)}
+                            <TallyBar percent={this.props.optionOnePercent} tally={this.props.optionOneTally}/>
+                        </div>
+                        <div className="answeredOption">
+                            Option Two {this.props.question_id.question_id.optionTwo.text}
+                            {this.props.selfVoted === 'optionTwo' && (<b> You Voted</b>)}
+                            <TallyBar percent={this.props.optionTwoPercent} tally={this.props.optionTwoTally}/>
+                        </div>
+                    </div>
 
-                Option Two {this.props.question_id.optionTwo.text}
 
-                {this.props.selfVoted === 'optionTwo' && (<b>You Voted</b>)}
-                <TallyBar percent={this.props.optionTwoPercent} tally={this.props.optionTwoTally}/>
+
+                </div>
+
 
             </div>
 
-
             )
-
-
 
     }
 
-
-
-
 }
-
 
 function mapStateToProps({questions, activeUser, users }, question_id) {
 
@@ -61,10 +68,7 @@ function mapStateToProps({questions, activeUser, users }, question_id) {
     let optionOneTally = 0;
     let optionTwoTally = 0;
 
-    console.log(question_id)
-
     let selfVoted = users[activeUser.activeUserId].answers[question_id.question_id.id];
-    console.log(selfVoted)
 
     Object.keys(users).forEach(function (user) {
 
@@ -84,7 +88,7 @@ function mapStateToProps({questions, activeUser, users }, question_id) {
     let optionOnePercent = optionOneTally / (optionOneTally + optionTwoTally) * 100;
     let optionTwoPercent = optionTwoTally / (optionOneTally + optionTwoTally) * 100;
 
-    return({questions, activeUser, optionOneTally, optionTwoTally, optionOnePercent, optionTwoPercent, selfVoted})
+    return({questions, users, activeUser, optionOneTally, optionTwoTally, optionOnePercent, optionTwoPercent, selfVoted, question_id})
 
 }
 

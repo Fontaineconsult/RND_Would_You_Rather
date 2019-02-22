@@ -7,7 +7,7 @@ import {withRouter} from "react-router";
 class QuestionContainer extends Component {
 
     render () {
-        console.log("OUTERCONTAINER", this.props)
+
 
 
         if (this.props.question === undefined) {
@@ -16,7 +16,7 @@ class QuestionContainer extends Component {
         } else {
             return(
 
-                <div>
+                <div className="mainQuestionContainer">
                     <b>Would you Rather</b>
                     {this.props.isAnswered && (
                         <AnsweredQuestion question_id = {this.props.question}/>

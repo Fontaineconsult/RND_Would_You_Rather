@@ -62,7 +62,18 @@
 
 .questionSelection {
     margin-bottom: 20px;
+
+
+}
+
+.questionContent {
+
     display: flex;
+
+}
+
+.userNameTop {
+    margin-bottom: 10px;
 
 }
 
@@ -89,6 +100,26 @@
     width: 50%;
     margin-right: auto;
     margin-left: auto;
+
+}
+
+.askedByHeader {
+    margin-bottom: 10px;
+
+}
+
+.answeredQuestionContainerContent {
+    display: flex;
+
+
+}
+.questionContainerLeft {
+    width: 10%;
+
+}
+
+.questionContainerRight {
+    width: 90%
 
 }
 

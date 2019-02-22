@@ -33,12 +33,12 @@ class AnswerQuestion extends Component {
 
 
     render () {
-        console.log("QUESTION", this.props)
+
 
 
 
         return(
-            <div>
+            <div className="answerQuestionContainer">
                 <b>singleQuestion</b>
 
                 <form onSubmit={this.submitAnswer}>
