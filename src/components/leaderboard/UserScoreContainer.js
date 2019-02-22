@@ -39,9 +39,14 @@ class UserScoreContainer extends Component {
                     <UserProfileImage image={this.props.users[this.props.user].avatarURL} />
                 </div>
                 <div className="scoresContainer">
-                    <AnsweredQuestions  answeredCount={answeredCount}/>
-                    <CreatedQuestions  createdCount={createdCount}/>
-                    <TotalScore totalscore = {createdCount + answeredCount}/>
+                    <div className="scoresContainerLeft">
+                        <AnsweredQuestions  answeredCount={answeredCount}/>
+                        <CreatedQuestions  createdCount={createdCount}/>
+                    </div>
+                    <div className="scoresContainerRight">
+                        <TotalScore totalscore = {createdCount + answeredCount}/>
+                    </div>
+
                 </div>
 
             </div>

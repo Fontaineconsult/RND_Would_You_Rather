@@ -13,7 +13,6 @@ class LeaderBoardContainer extends Component {
 
                 {console.log(this.props.sortedUsers)}
                 {(this.props.sortedUsers).map((item, i) => (
-
                     <UserScoreContainer key={i} users={this.props.users} user={item.name}/>
                 ))}
 

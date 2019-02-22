@@ -42,22 +42,46 @@
 
 .homeViewButtons {
     display: flex;
+    margin-top: 5px;
 
 
 }
+.questionsOuterContainer{
+
+    border-width: 2px;
+    border-style: solid;
+    border-color: #cecac9;
+
+}
+
 
 .homeQuestionsTitle {
+    text-align: center;
     margin-top: 10px;
     margin-bottom: 20px;
-    text-align: center;
+
     margin-right: auto;
     margin-left: auto;
 }
 
 .homeViewButton {
+    text-align: center;
+    width: 50%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #eae6e5;
+    border-color: dimgrey;
+    border-style: solid;
+    border-bottom-width: 1px;
 
-    margin-right: auto;
-    margin-left: auto;
+}
+
+.homeViewContentContainer {
+
+    padding-left: 10px;
+    padding-right: 10px;
+
+
 }
 
 .questionSelection {
@@ -115,6 +139,19 @@
 }
 .questionContainerLeft {
     width: 10%;
+    margin-right: 10px;
+
+}
+
+
+.wouldYouRather {
+    margin-bottom: 10px;
+}
+
+
+.answeredOption {
+    margin-bottom: 10px;
+
 
 }
 
@@ -122,6 +159,19 @@
     width: 90%
 
 }
+
+
+.answeredQuestionContainer {
+
+    padding: 10px;
+
+    border-color: dimgrey;
+    border-style: solid;
+    border-bottom-width: 1px;
+
+
+}
+
 
 .NavButton {
     margin-left: 10px;
@@ -151,6 +201,24 @@
 .scoresOuterContainer {
 
     display: inline-flex;
+    width: 100%
+}
+
+.scoresContainer {
+    display: flex;
+    width: 100%
+
+}
+
+.scoresContainerRight {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.leaderBoardQuestion {
+    margin-bottom: 10px;
+
+
 }
 
 .userImageContainer {
@@ -160,5 +228,15 @@
 
 .userScoreName {
     margin-bottom: 10px;
+
+}
+
+.leaderBoardContainer {
+
+    padding: 10px;
+
+    border-color: dimgrey;
+    border-style: solid;
+    border-bottom-width: 1px;
 
 }

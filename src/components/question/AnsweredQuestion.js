@@ -36,20 +36,20 @@ class AnsweredQuestion extends Component {
 
                     </div>
                     <div className="questionContainerRight">
-                        <div className="wouldYouRather">Would you rather</div>
+                        <div className="wouldYouRather">Would You Rather . . .</div>
                         <div className="answeredOption">
-                            Option One {this.props.question_id.question_id.optionOne.text}
-                            {this.props.selfVoted === 'optionOne' && (<b> You Voted</b>)}
+                            Option One -- {this.props.question_id.question_id.optionOne.text}
+
+                            {this.props.selfVoted === 'optionOne' && (<b>  - You Voted -</b>)}
                             <TallyBar percent={this.props.optionOnePercent} tally={this.props.optionOneTally}/>
                         </div>
                         <div className="answeredOption">
-                            Option Two {this.props.question_id.question_id.optionTwo.text}
+                            Option Two -- {this.props.question_id.question_id.optionTwo.text}
+
                             {this.props.selfVoted === 'optionTwo' && (<b> You Voted</b>)}
                             <TallyBar percent={this.props.optionTwoPercent} tally={this.props.optionTwoTally}/>
                         </div>
                     </div>
-
-
 
                 </div>
 

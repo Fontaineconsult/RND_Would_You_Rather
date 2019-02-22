@@ -7,9 +7,7 @@ class CreatedQuestions extends Component {
     render(){
 
         return(
-            <div>Created Questions {this.props.createdCount}</div>
-
-
+            <div className="leaderBoardQuestion">Created Questions: {this.props.createdCount}</div>
         )
 
     }

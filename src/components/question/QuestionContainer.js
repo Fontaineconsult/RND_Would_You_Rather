@@ -17,7 +17,7 @@ class QuestionContainer extends Component {
             return(
 
                 <div className="mainQuestionContainer">
-                    <b>Would you Rather</b>
+
                     {this.props.isAnswered && (
                         <AnsweredQuestion question_id = {this.props.question}/>
 

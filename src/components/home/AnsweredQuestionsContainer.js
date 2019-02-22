@@ -12,7 +12,10 @@ class AnsweredQuestionsContainer extends Component {
             <div>
                 <div className="homeQuestionsTitle">Your Answered Questions</div>
                 {Object.keys(this.props.users[this.props.activeUser.activeUserId].answers).map(id => (
-                    <Question answered = {id} questions = {this.props.questions} users={this.props.users} image={this.props.users[this.props.questions[id].author].avatarURL} />
+                    <Question answered = {id}
+                              questions = {this.props.questions}
+                              users={this.props.users}
+                              image={this.props.users[this.props.questions[id].author].avatarURL} />
                 ))}
 
             </div>
