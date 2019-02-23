@@ -15,7 +15,7 @@ export function receiveQuestions (questions) {
 
 export function addQuestion (formattedQuestion) {
 
-    _saveQuestion(formattedQuestion)
+    console.log("FERMERTEDQURSTURN", formattedQuestion)
 
     return {
         type: ADD_QUESTION,

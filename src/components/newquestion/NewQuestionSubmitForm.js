@@ -39,8 +39,6 @@ class NewQuestionSubmitForm extends Component {
 
     submitQuestions(event) {
         event.preventDefault();
-
-
         this.props.dispatch(dispatchNewQuestion({activeUser: this.props.activeUser.activeUserId, optionOne: this.state.question1, optionTwo: this.state.question2 }));
         this.props.history.push("/")
 
@@ -53,21 +51,16 @@ class NewQuestionSubmitForm extends Component {
 
                <form className="newQuestionSubmitForm" onSubmit={this.submitQuestions}>
                    <input type='text' name="Question1" placeholder="Question1" onChange={this.updateInput}/>
+                   <label>OR</label>
                    <input type='text' name="Question2" placeholder="Question1" onChange={this.updateInput}/>
                    <input type='Submit' name="Submit"/>
                </form>
 
             </div>
 
-
         )
 
-
-
-
     }
-
-
 
 }
 
@@ -76,6 +69,5 @@ function mapStateToProps( {users, activeUser, questions} ) {
     return {users, activeUser, questions}
 
     }
-
 
 export default withRouter(connect(mapStateToProps)(NewQuestionSubmitForm));
