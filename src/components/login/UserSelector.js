@@ -23,7 +23,6 @@ class UserSelector extends Component {
         event.preventDefault();
         this.props.dispatch(dispatchActiveUser(this.state))
 
-        console.log(window.location.pathname)
 
         if (this.props.location.state === undefined) {
             this.props.history.push("/")
@@ -52,8 +51,8 @@ class UserSelector extends Component {
             <div className="loginContainerFormContainer">
                 <form className="loginContainerForm" onSubmit={this.setUser}>
                     <select value={this.state.selectedUserName} onChange={this.setCompState}>
-                        <option value="Select User">Select User</option>
-                        {this.props.userList.name.map((user) => (<option value={user}>{user}</option>))}
+                        <option id="none" value="Select User">Select User</option>
+                        {this.props.userList.name.map((user) => (<option key={user} value={user}>{user}</option>))}
                     </select>
                     <input type="submit" value='Login'/>
                 </form>

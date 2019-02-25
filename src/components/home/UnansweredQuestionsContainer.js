@@ -10,7 +10,10 @@ class UnansweredQuestionsContainer extends Component {
         return(
             <div>
                 <div className="homeQuestionsTitle">Your Unanswered Questions</div>
-                {this.props.unanswered.map(id => (<Question questions = {this.props.questions}
+
+                {this.props.unanswered.map(id => (<Question id = {id}
+                                                            key={id}
+                                                            questions = {this.props.questions}
                                                             image={this.props.users[this.props.questions[id].author].avatarURL}
                                                             users={this.props.users} answered={id}/>))}
 

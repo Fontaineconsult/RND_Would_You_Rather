@@ -10,8 +10,6 @@ class LeaderBoardContainer extends Component {
             <div className="leaderBoardContainer">
                 <br></br>
                 <div className="leaderBoardTitle">Leader Board</div>
-
-                {console.log(this.props.sortedUsers)}
                 {(this.props.sortedUsers).map((item, i) => (
                     <UserScoreContainer key={i} users={this.props.users} user={item.name}/>
                 ))}

@@ -5,7 +5,6 @@ import { setActiveUser, logoutActiveUser } from "./activeuser";
 import { addQuestion } from "./questions"
 import { answerQuestion } from "../actions/users";
 import { registerQuestion } from "../actions/users";
-import { setBrowserHistory } from "../actions/browserHistory"
 
 
 export function handleInitialData(){
@@ -15,7 +14,6 @@ export function handleInitialData(){
 
             dispatch(receiveUsers(users));
             dispatch(receiveQuestions(questions));
-            console.log(users, questions)
         })
 
     }
