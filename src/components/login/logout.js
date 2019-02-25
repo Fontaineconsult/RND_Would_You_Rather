@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import UserSelector from "./UserSelector"
 import { connect } from 'react-redux'
 import { dispatchLogout } from '../../actions/shared'
 

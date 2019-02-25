@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { dispatchActiveUser } from "../../actions/shared";
-import UserScoreContainer from "../leaderboard/LeaderBoardContainer";
 import { withRouter } from 'react-router'
 
 
@@ -51,7 +50,7 @@ class UserSelector extends Component {
             <div className="loginContainerFormContainer">
                 <form className="loginContainerForm" onSubmit={this.setUser}>
                     <select value={this.state.selectedUserName} onChange={this.setCompState}>
-                        <option id="none" value="Select User">Select User</option>
+                        <option id="none" value="Select User" disabled>Select User</option>
                         {this.props.userList.name.map((user) => (<option key={user} value={user}>{user}</option>))}
                     </select>
                     <input type="submit" value='Login'/>

@@ -18,7 +18,7 @@ function TotalScore(props) {
 }
 
 function UserProfileImage(props) {
-    return <img src={props.image}
+    return <img alt="avatar" src={props.image}
                 style={tempImgSize}/>
 
 }

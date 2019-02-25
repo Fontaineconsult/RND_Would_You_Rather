@@ -146,9 +146,15 @@
 
 
 .wouldYouRather {
+    font-size: larger;
     margin-bottom: 10px;
 }
 
+
+.questionToSelect {
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
 
 .answeredOption {
     margin-bottom: 10px;

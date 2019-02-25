@@ -24,7 +24,6 @@ class AnswerQuestion extends Component {
 
     submitAnswer(event){
         event.preventDefault()
-        console.log("submitting")
         this.props.dispatch(dispatchAnswer(this.props.question_id, this.state, this.props.activeUser))
 
 

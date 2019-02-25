@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { dispatchNewQuestion } from '../../actions/shared'
-import { registerQuestion } from "../../actions/users";
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
 

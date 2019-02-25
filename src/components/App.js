@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import {handleInitialData} from "../actions/shared";
 import MainContentContainer from "./MainContentContainer"
 import TopMenu from "../components/dashboard/TopMenu"
-import { Route, Router } from 'react-router-dom'
+import { Route} from 'react-router-dom'
 import {withRouter} from "react-router";
 
 

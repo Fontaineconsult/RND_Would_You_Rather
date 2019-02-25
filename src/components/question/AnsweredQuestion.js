@@ -23,8 +23,6 @@ function TallyBar (props) {
 class AnsweredQuestion extends Component {
 
     render() {
-        console.log("PEERERS", this.props)
-        console.log("GERERERER", this.props.question_id.question_id.author)
         return (
 
                <div className="answeredQuestionInner">
@@ -74,9 +72,6 @@ function mapStateToProps({questions, activeUser, users }, question_id) {
     let optionTwoPercent = (optionTwoTally / (optionOneTally + optionTwoTally) * 100).toString();
     optionOnePercent = parseInt(optionOnePercent).toString()
     optionTwoPercent = parseInt(optionTwoPercent).toString()
-
-    console.log(optionOnePercent, optionTwoPercent)
-
     return({questions, users, activeUser, optionOneTally, optionTwoTally, optionOnePercent, optionTwoPercent, selfVoted, question_id})
 
 }

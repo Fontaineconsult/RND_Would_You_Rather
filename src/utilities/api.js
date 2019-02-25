@@ -3,7 +3,6 @@ import {
     _saveQuestionAnswer,
     _getUsers,
     _getQuestions,
-    questions
 } from './_data.js'
 
 

@@ -17,8 +17,9 @@ function Question(props) {
 
                 <div className="questionSelectionLeftImage"><img alt="avatar" src={props.image} style={tempImgSize}/></div>
                 <div className="questionSelectionLeftContent">
+                    <div className="wouldYouRather">Would you rather</div>
                     <div className="questionToSelect">{props.questions[props.answered].optionOne.text}</div>
-                        <div>or</div>
+                    <div><i>or</i></div>
                     <div className="questionToSelect">{props.questions[props.answered].optionTwo.text}</div>
                 </div>
 
