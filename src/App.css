@@ -10,6 +10,7 @@
     width: 100%;
     height: 3vh;
     background-color: #eae6e5;
+    margin-bottom: 20px;
 
 }
 
@@ -232,7 +233,8 @@
 }
 
 .leaderBoardTitle {
-
+    text-align: center;
+    font-size: larger;
     margin-bottom: 10px;
 }
 
@@ -262,3 +264,53 @@
 
 }
 
+.tallyBar {
+    margin-top: 10px;
+}
+
+.loginContainer {
+    width: 100%;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #ede5e5;
+
+
+}
+
+.loginContainerTitleTop {
+
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.loginContainerTitleBottom {
+    text-align: center;
+    font-size: x-large;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+}
+
+.loginContainerBodyTop {
+
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+.loginContainerBodyBottom {
+
+    display: flex;
+
+}
+
+.loginContainerFormContainer {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+.loginContainerForm select {
+    width: 150px;
+    margin-right: 10px;
+}

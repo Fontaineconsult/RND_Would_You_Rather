@@ -5,7 +5,6 @@ import { setActiveUser, logoutActiveUser } from "./activeuser";
 import { addQuestion } from "./questions"
 import { answerQuestion } from "../actions/users";
 import { registerQuestion } from "../actions/users";
-import {formatQuestion, _saveQuestionAnswer, _saveQuestion} from "../utilities/_data";
 import { setBrowserHistory } from "../actions/browserHistory"
 
 
@@ -35,12 +34,11 @@ export function dispatchActiveUser(activeUser) {
 
 export function dispatchNewQuestion(question) {
 
-
     return (dispatch) => {
 
         saveNewQuestion({optionOneText: question.optionOne, optionTwoText:question.optionTwo, author:question.activeUser})
             .then(function(question){
-            console.log("DERRPPPP", question)
+
             dispatch(addQuestion(question));
             dispatch(registerQuestion(question))
         })
@@ -50,15 +48,11 @@ export function dispatchNewQuestion(question) {
 
 }
 
-
 export function dispatchAnswer(question, answerino, user) {
 
     let authedUser = user.activeUserId;
     let qid = question.id;
     let answer = answerino.checked;
-
-
-
 
     saveAnswer({authedUser, qid, answer});
 
@@ -66,11 +60,7 @@ export function dispatchAnswer(question, answerino, user) {
         saveAnswer({authedUser, qid, answer}).then(function () {
             dispatch(answerQuestion(question, answer, user))
         }).catch(() => {alert("Couldn't Save Your Answer")});
-
-
     }
-
-
 
 }
 
@@ -81,19 +71,8 @@ export function dispatchLogout( activeUser) {
 
         dispatch(logoutActiveUser( activeUser ))
 
-
-    }
-
-
-}
-
-
-export function dispatchCurrentRoute(route){
-
-    return (dispatch) => {
-
-        dispatch(setBrowserHistory(route))
-
     }
 
 }
+
+

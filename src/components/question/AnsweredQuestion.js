@@ -26,17 +26,8 @@ class AnsweredQuestion extends Component {
         console.log("PEERERS", this.props)
         console.log("GERERERER", this.props.question_id.question_id.author)
         return (
-            <div className="answeredQuestionContainer">
 
-                <div className="askedByHeader">Asked by: {this.props.users[this.props.question_id.question_id.author].name}</div>
-
-                <div className="answeredQuestionContainerContent">
-                    <div className="questionContainerLeft">
-                        <img src={this.props.users[this.props.question_id.question_id.author].avatarURL} alt="avatar"/>
-
-                    </div>
-                    <div className="questionContainerRight">
-                        <div className="wouldYouRather">Would You Rather . . .</div>
+               <div className="answeredQuestionInner">
                         <div className="answeredOption">
                             Option One -- {this.props.question_id.question_id.optionOne.text}
 
@@ -49,12 +40,7 @@ class AnsweredQuestion extends Component {
                             {this.props.selfVoted === 'optionTwo' && (<b> You Voted</b>)}
                             <TallyBar percent={this.props.optionTwoPercent} tally={this.props.optionTwoTally}/>
                         </div>
-                    </div>
-
-                </div>
-
-
-            </div>
+               </div>
 
             )
 
@@ -81,12 +67,15 @@ function mapStateToProps({questions, activeUser, users }, question_id) {
                 optionTwoTally++
             }
 
-
         }
     });
 
-    let optionOnePercent = optionOneTally / (optionOneTally + optionTwoTally) * 100;
-    let optionTwoPercent = optionTwoTally / (optionOneTally + optionTwoTally) * 100;
+    let optionOnePercent = (optionOneTally / (optionOneTally + optionTwoTally) * 100).toString();
+    let optionTwoPercent = (optionTwoTally / (optionOneTally + optionTwoTally) * 100).toString();
+    optionOnePercent = parseInt(optionOnePercent).toString()
+    optionTwoPercent = parseInt(optionTwoPercent).toString()
+
+    console.log(optionOnePercent, optionTwoPercent)
 
     return({questions, users, activeUser, optionOneTally, optionTwoTally, optionOnePercent, optionTwoPercent, selfVoted, question_id})
 

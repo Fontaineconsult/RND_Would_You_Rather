@@ -38,8 +38,8 @@ class AnswerQuestion extends Component {
 
 
         return(
-            <div className="answerQuestionContainer">
-                <b>singleQuestion</b>
+            <div className="answerQuestionInner">
+
 
                 <form onSubmit={this.submitAnswer}>
                     <label htmlFor="optionOne">{this.props.question_id.optionOne.text}</label>

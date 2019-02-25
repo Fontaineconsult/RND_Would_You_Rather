@@ -8,8 +8,6 @@ class QuestionContainer extends Component {
 
     render () {
 
-
-
         if (this.props.question === undefined) {
             return(<div>404 Question Not Found</div>)
 
@@ -17,17 +15,36 @@ class QuestionContainer extends Component {
             return(
 
                 <div className="mainQuestionContainer">
+                    <div className="answeredQuestionContainer">
 
-                    {this.props.isAnswered && (
-                        <AnsweredQuestion question_id = {this.props.question}/>
+                        <div className="askedByHeader">Asked by: {this.props.users[this.props.question.author].name}</div>
 
-                    )}
+                        <div className="answeredQuestionContainerContent">
+                            <div className="questionContainerLeft">
+                                <img src={this.props.users[this.props.question.author].avatarURL} alt="avatar"/>
 
-                    {!this.props.isAnswered && (
-                        <AnswerQuestion question_id = {this.props.question} />
+                            </div>
 
 
-                    )}
+                            <div className="questionContainerRight">
+                                <div className="wouldYouRather">Would You Rather . . .</div>
+                                {this.props.isAnswered && (
+                                    <AnsweredQuestion question_id = {this.props.question}/>
+
+                                )}
+
+                                {!this.props.isAnswered && (
+                                    <AnswerQuestion question_id = {this.props.question} />
+
+
+                                )}
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
 
                 </div>
 

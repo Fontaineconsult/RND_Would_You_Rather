@@ -5,7 +5,7 @@ export default function activeUser (state = {}, action) {
     switch (action.type) {
 
         case SET_ACTIVE_USER :
-            console.log("SET AVTICE USER", action.type, action.activeUser)
+
             return {
                 activeUserName: action.activeUser.selectedUserName,
                 activeUserId: action.activeUser.selectedUserId

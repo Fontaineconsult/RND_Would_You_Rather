@@ -8,7 +8,7 @@ export const REGISTER_QUESTION = "REGISTER_QUESTION"
 
 
 export function receiveUsers(users) {
-    console.log("ACTION USERS", users)
+
     return {
         type: RECEIVE_USERS,
         users

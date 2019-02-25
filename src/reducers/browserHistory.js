@@ -7,7 +7,7 @@ export default function browserHistory (state = [], action) {
     switch (action.type) {
 
         case PUSH_CURRENT_ROUTE:
-            console.log("HIT REDUCER")
+
 
             return [
                 ...state.concat(action.currentRoute)

@@ -151,7 +151,7 @@ export function _saveQuestion (question) {
     return new Promise((res, rej) => {
         const authedUser = question.author;
         const formattedQuestion = formatQuestion(question);
-        console.log("AUTHORTIMEORINA", formattedQuestion, authedUser)
+
 
         setTimeout(() => {
             questions = {
@@ -169,12 +169,12 @@ export function _saveQuestion (question) {
 
             res(formattedQuestion)
         }, 1000)
-        console.log("THEBACKEND QUESTIONS", questions)
+
     })
 }
 
 export function _saveQuestionAnswer ({ authedUser, qid, answer }) {
-    console.log("INTHEFUNCTION", authedUser, qid, answer);
+
 
     return new Promise((res, rej) => {
         setTimeout(() => {

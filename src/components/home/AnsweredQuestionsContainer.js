@@ -7,7 +7,7 @@ import Question from './UserQuestion'
 class AnsweredQuestionsContainer extends Component {
 
     render(){
-        console.log("DFLJDSHJKGDHG", this.props)
+
         return(
             <div>
                 <div className="homeQuestionsTitle">Your Answered Questions</div>

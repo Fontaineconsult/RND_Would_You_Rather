@@ -21,15 +21,10 @@ export function getAllData() {
 export function saveNewQuestion(question){
 
 
-    let farts = _saveQuestion(question).then(function (result) {return result})
-    console.log("EWIPGJSGSDGLKSDHG", questions)
-    return farts
-
+    return _saveQuestion(question).then(function (result) {return result})
 
 }
 
-
 export function saveAnswer(answer) {
-
     return _saveQuestionAnswer(answer).then(function (result) {return result})
 }

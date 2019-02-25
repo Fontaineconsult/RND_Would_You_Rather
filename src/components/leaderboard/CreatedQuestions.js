@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 
 
-
 class CreatedQuestions extends Component {
 
     render(){
@@ -11,9 +10,6 @@ class CreatedQuestions extends Component {
         )
 
     }
-
-
-
 
 
 }

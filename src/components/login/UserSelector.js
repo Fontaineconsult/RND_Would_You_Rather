@@ -23,19 +23,13 @@ class UserSelector extends Component {
         event.preventDefault();
         this.props.dispatch(dispatchActiveUser(this.state))
 
-        console.log("THAATT HIST", this.props.history)
-        console.log("THEM PROPPSSSS", this.props)
         console.log(window.location.pathname)
 
         if (this.props.location.state === undefined) {
-
             this.props.history.push("/")
         } else {
             this.props.history.push(this.props.location.state.from.pathname)
-
         }
-
-
 
     }
 
@@ -43,7 +37,6 @@ class UserSelector extends Component {
 
         let userIndex = this.props.userList.name.indexOf(event.target.value);
 
-        console.log("USERID", userIndex);
 
         this.setState({
             selectedUserName: event.target.value,
@@ -56,8 +49,8 @@ class UserSelector extends Component {
 
         return(
 
-            <div>
-                <form onSubmit={this.setUser}>
+            <div className="loginContainerFormContainer">
+                <form className="loginContainerForm" onSubmit={this.setUser}>
                     <select value={this.state.selectedUserName} onChange={this.setCompState}>
                         <option value="Select User">Select User</option>
                         {this.props.userList.name.map((user) => (<option value={user}>{user}</option>))}
@@ -76,7 +69,6 @@ class UserSelector extends Component {
 function mapStateToProps( {users, activeUser, ownProps} ) {
 
     let userList = {name: Object.keys(users).map(user => (users[user].name)), id: Object.keys(users)}
-    console.log("ownProps", ownProps)
 
     return {users, activeUser, userList}
 

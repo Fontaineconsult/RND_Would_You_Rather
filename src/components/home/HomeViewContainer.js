@@ -37,9 +37,6 @@ class HomeViewContainer extends Component {
         return(
             <div className="homeViewContainer">
 
-
-                Home View
-
                 {Object.keys(this.props.activeUser).length > 0 && (
                     <div className="questionsOuterContainer">
 

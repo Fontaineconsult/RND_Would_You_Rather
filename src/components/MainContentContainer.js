@@ -5,23 +5,16 @@ import LoginContainer from "./login/LoginContainer"
 import NewQuestionContainer from "./newquestion/NewQuestionContainer"
 import QuestionContainer from "./question/QuestionContainer"
 import LogoutContainer from "./login/logout"
-import { dispatchCurrentRoute } from "../actions/shared"
-import { BrowserRouter as Router, Route, Redirect, Switch} from 'react-router-dom'
+import { Route, Redirect, Switch} from 'react-router-dom'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
 
 
 class MainContentContainer extends Component {
 
-
-
-
     render() {
-        console.log("EHHDJHGDG", this.props.location.state)
         return(
             <div className="mainContentContainer">
-                MainContentView
-
                 <Switch>
                     <Route exact path='/' render={() => (!this.props.loggedIn ? (<Redirect push to="/login"/>):(<HomeViewContainer/>))}/>
                     <Route exact path='/leaderboard' render={() => (!this.props.loggedIn ? (<Redirect to={{pathname:"/login", state:{ from: this.props.location}}}/>):(<LeaderBoardContainer/>))}/>
